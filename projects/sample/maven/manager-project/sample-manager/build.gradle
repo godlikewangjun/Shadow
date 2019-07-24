@@ -29,7 +29,7 @@ android {
 }
 
 dependencies {
-    implementation "com.tencent.shadow.dynamic:manager:$shadow_version"
-    compileOnly "com.tencent.shadow.core:common:$shadow_version"
-    compileOnly "com.tencent.shadow.dynamic:host:$shadow_version"
+    implementation "com.wj.sdk:manager:$shadow_version"
+    compileOnly "com.wj.sdk:common:$shadow_version"
+    compileOnly "com.wj.sdk:host:$shadow_version"
 }

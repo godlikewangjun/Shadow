@@ -26,6 +26,6 @@ android {
 }
 
 dependencies {
-    implementation "com.tencent.shadow.core:runtime:$shadow_version"
+    implementation "com.wj.sdk:runtime:$shadow_version"
 }
 

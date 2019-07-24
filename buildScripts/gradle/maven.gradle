@@ -36,6 +36,7 @@ task testSdk() {
 }
 
 apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
 
 static def getDependencyNode(scope, groupId, artifactId, version) {
     Node node = new Node(null, 'dependency')
@@ -77,10 +78,11 @@ def setGeneratePomFileAndDepends(publicationName) {
     }
 }
 
-def publicationVersion = project.ARTIFACT_VERSION
-def coreGroupId = 'com.wj.libs'
+def publicationVersion = '1.0.0' //project.ARTIFACT_VERSION
+version = publicationVersion
+def coreGroupId = 'com.wj.sdk'
 def corePath = 'projects/sdk/core'
-def dynamicGroupId = 'com.wj.libs'
+def dynamicGroupId = 'com.wj.sdk'
 def dynamicPath = 'projects/sdk/dynamic'
 
 publishing {
@@ -296,6 +298,38 @@ publishing {
     }
     repositories {
         mavenLocal()
+    }
+}
+// Bintray
+//获取local.propertes的信息
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    publications = ['gradlePlugin','common','loadParameters','coreLoader','coreManager','runtime','transformKit','transformKitTest'
+                    ,'transform','dynamicHost','dynamicLoader','dynamicLoaderImpl','dynamicManager']
+    configurations = ['archives']
+    publish = true
+    override = true
+    pkg {
+        //填入 bintray 上对应的 package 信息
+        repo = 'wjAndBase'
+        name = 'Shadow'
+        vcsUrl = 'https://github.com/godlikewangjun/Shadow.git'
+        websiteUrl = 'https://github.com/godlikewangjun/Shadow'
+        licenses = ['Apache-2.0']
+        issueTrackerUrl = 'https://github.com/godlikewangjun/Shadow/issues'
+        publicDownloadNumbers = true
+        publish = true
+
+        version {
+            name = this.version
+            desc = 'update'
+            vcsTag = this.version
+            released = new Date()
+            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+        }
     }
 }
 
