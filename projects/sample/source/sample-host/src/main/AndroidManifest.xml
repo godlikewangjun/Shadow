@@ -84,7 +84,7 @@
         </activity>
 
         <provider
-            android:authorities="com.tencent.shadow.contentprovider.authority.dynamic"
+            android:authorities="${applicationId}.plugins.sdk"
             android:name="com.tencent.shadow.core.runtime.container.PluginContainerContentProvider"
             android:grantUriPermissions="true"
             android:process=":plugin"

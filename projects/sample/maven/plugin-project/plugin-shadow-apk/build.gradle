@@ -14,10 +14,11 @@ buildscript {
         google()
         jcenter()
         mavenLocal()
+        maven { url "https://dl.bintray.com/godlikewangjun/wjAndBase" }
     }
 
     dependencies {
-        classpath "com.tencent.shadow.core:gradle-plugin:$shadow_version"
+        classpath "com.wj.sdk:gradle-plugin:$shadow_version"
     }
 }
 

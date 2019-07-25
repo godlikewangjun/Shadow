@@ -26,7 +26,7 @@ android {
 }
 
 dependencies {
-    implementation "com.tencent.shadow.dynamic:loader-impl:$shadow_version"
+    implementation "com.wj.sdk:loader-impl:$shadow_version"
 
     compileOnly "com.wj.sdk:runtime:$shadow_version"
     compileOnly "com.wj.sdk:common:$shadow_version"
