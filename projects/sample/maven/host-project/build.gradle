@@ -18,7 +18,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url "https://dl.bintray.com/godlikewangjun/wjAndBase" }
+        maven { url "https://dl.bintray.com/godlikewangjun/sdk" }
 //        mavenLocal()
     }
 }

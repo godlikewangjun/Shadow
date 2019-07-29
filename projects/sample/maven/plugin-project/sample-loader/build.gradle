@@ -26,10 +26,10 @@ android {
 }
 
 dependencies {
-    implementation "com.wj.sdk:loader-impl:$shadow_version"
+    implementation "com.wj.sdk.dynamic:loader-impl:$shadow_version"
 
-    compileOnly "com.wj.sdk:runtime:$shadow_version"
-    compileOnly "com.wj.sdk:common:$shadow_version"
+    compileOnly "com.wj.sdk.core:runtime:$shadow_version"
+    compileOnly "com.wj.sdk.core:common:$shadow_version"
     //下面这行依赖是为了防止在proguard的时候找不到LoaderFactory接口
-    compileOnly "com.wj.sdk:host:$shadow_version"
+    compileOnly "com.wj.sdk.dynamic:host:$shadow_version"
 }
