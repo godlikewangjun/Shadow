@@ -4,7 +4,7 @@ apply from: '../plugin-normal-apk/build.gradle'
 android {
     defaultConfig {
         //再把applicationId改成宿主的
-        applicationId "com.tencent.shadow.sample.host"
+        applicationId "com.wj.makebai.test"
     }
 }
 
@@ -18,7 +18,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.wj.sdk:gradle-plugin:$shadow_version"
+        classpath "com.wj.sdk.core:gradle-plugin:$shadow_version"
     }
 }
 

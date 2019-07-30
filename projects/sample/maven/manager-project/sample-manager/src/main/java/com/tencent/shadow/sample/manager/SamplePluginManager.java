@@ -57,7 +57,7 @@ public class SamplePluginManager extends FastPluginManager {
         if (fromId == Constant.FROM_ID_START_ACTIVITY) {
             bundle.putString(Constant.KEY_PLUGIN_ZIP_PATH, "/data/local/tmp/plugin-debug.zip");
             bundle.putString(Constant.KEY_PLUGIN_PART_KEY, "sample-plugin");
-            bundle.putString(Constant.KEY_ACTIVITY_CLASSNAME, "com.tencent.shadow.sample.plugin.MainActivity");
+            bundle.putString(Constant.KEY_ACTIVITY_CLASSNAME, "com.wj.makebai.test.plugin.MainActivity");
             onStartActivity(context, bundle, callback);
         } else if (fromId == Constant.FROM_ID_CALL_SERVICE) {
             callPluginService(context);
