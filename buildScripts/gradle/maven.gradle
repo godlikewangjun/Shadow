@@ -78,7 +78,7 @@ def setGeneratePomFileAndDepends(publicationName) {
     }
 }
 
-def publicationVersion = '1.0.0' //project.ARTIFACT_VERSION
+def publicationVersion = '1.0.1' //project.ARTIFACT_VERSION
 version = publicationVersion
 def coreGroupId = 'com.wj.sdk.core'
 def corePath = 'projects/sdk/core'
