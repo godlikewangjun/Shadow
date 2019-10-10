@@ -56,5 +56,6 @@ public class PluginUseHostClassActivity extends BaseActivity {
         linearLayout.addView(hostUiLayer);
 
         setContentView(linearLayout);
+
     }
 }

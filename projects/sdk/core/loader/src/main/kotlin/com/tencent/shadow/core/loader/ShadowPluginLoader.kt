@@ -69,7 +69,7 @@ abstract class ShadowPluginLoader(hostAppContext: Context) : DelegateProvider, D
     lateinit var mComponentManager: ComponentManager
 
     /**
-     * @GuardedBy("mLock")
+     * @GuardedBy("mLock")loadClass
      */
     abstract fun getComponentManager():ComponentManager
 
@@ -98,7 +98,6 @@ abstract class ShadowPluginLoader(hostAppContext: Context) : DelegateProvider, D
         mPluginServiceManagerLock.withLock {
             return mPluginServiceManager
         }
-
     }
 
     fun getPluginParts(partKey: String): PluginParts? {
